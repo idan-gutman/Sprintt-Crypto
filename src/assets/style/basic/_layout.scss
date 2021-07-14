@@ -1,0 +1,42 @@
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 20px;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  
+  > * {
+    grid-column: 2;
+    
+    &.full {
+      grid-column: 1 /-1;
+    }
+  }
+  
+  @include for-narrow-layout {
+    
+    grid-template-columns: 
+    minmax(rem(16px), 1fr)
+    minmax(auto, $mobile-breakpoint)
+    minmax(rem(16px), 1fr);
+  }
+  @include for-normal-layout {
+    grid-template-columns: 
+    minmax(rem(16px), 1fr)
+          minmax(auto, $narrow-breakpoint)
+          minmax(rem(16px), 1fr);
+  }
+  @include for-wide-layout {
+      grid-template-columns: 
+          minmax(rem(16px), 1fr)
+          minmax(auto, $normal-breakpoint)
+          minmax(rem(16px), 1fr);
+  }
+}
+
+
