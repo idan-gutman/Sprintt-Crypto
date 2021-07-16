@@ -19,7 +19,6 @@
   }
   
   @include for-narrow-layout {
-    
     grid-template-columns: 
     minmax(rem(16px), 1fr)
     minmax(auto, $mobile-breakpoint)
