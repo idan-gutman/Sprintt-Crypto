@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import * as serviceWorker from './serviceWorker';
-
+import './assets/styles/main.scss';
 import CarReducer from './reducers/CarReducer';
 import App from './App';
 

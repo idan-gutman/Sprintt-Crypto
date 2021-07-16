@@ -10,6 +10,7 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
 }
 
 h1,
@@ -31,8 +32,7 @@ img {
 }
 
 p {
-  // margin: 0 0 1em;
-  // max-width: 40ch;
+  margin: 0;
 }
 
 pre {
@@ -48,4 +48,9 @@ button {
 a{
   text-decoration: none;
   color: black;
+}
+
+.logo{
+  width: 305px;
+  height: 43px;
 }
