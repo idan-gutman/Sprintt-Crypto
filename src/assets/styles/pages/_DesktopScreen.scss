@@ -1,24 +1,16 @@
 .desktop-screen {
-    background-color: $clr1;
     height: 100vh;
     display: flex;
+    justify-content: center;
 
     .desktop-content {
-        // visibility: hidden;
-
-        // @include for-normal-layout {
-        //     visibility: visible;
-        // }
-
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 125px 24px 134px 185px;
-
         .phone-img {
             max-width: 800px;
         }
-
         .desktop-txt {
             max-width: 521px;
             min-width: 300px;
@@ -46,20 +38,5 @@
                 line-height: 33px;
             }
         }
-    }
-
-    // @include for-normal-layout {
-    //     background-color: $clr1;
-    // }
-
-}
-
-.mobile-content{
-    background-color: $clr1;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    img{
-margin: 20px;
     }
 }
