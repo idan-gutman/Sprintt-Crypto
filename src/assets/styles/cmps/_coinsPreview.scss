@@ -1,0 +1,44 @@
+.coin-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px;
+    // width: 360px;
+    border-radius: 20px;
+    background-color: #2B2F39;
+
+    .left-content {
+        display: flex;
+        align-items: center;
+        margin-left: 17px;
+
+        .symbol {
+            font-family: Roboto;
+            font-size: 10px;
+            color: #D6D5DA;
+        }
+
+        .img-preview {
+            width: 32px;
+            margin-right: 10px;
+        }
+
+    }
+
+    .right-content {
+        margin-right: 17px;
+
+    }
+
+    .name,
+    .price {
+        font-family: Roboto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #D6D5DA;
+        margin-bottom: 2px;
+    }
+}

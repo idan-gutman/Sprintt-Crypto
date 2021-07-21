@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { DesktopScreen } from "../pages/DesktopScreen"
 import { Menu } from "../cmps/Menu"
 import { Route, NavLink, Router, Switch } from 'react-router-dom';
-import { AllCurrencies } from '../pages/AllCurrencies';
-import { TrackedCurrencies } from '../pages/Tracked Currencies';
+import { AllCoins } from './AllCoins';
+import { TrackedCoins } from './TrackedCoins';
 
 export const HomePage = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -24,8 +24,8 @@ export const HomePage = () => {
         <React.Fragment>
             {screenWidth > breakpoint ? <DesktopScreen />: <Menu />}
             <Switch>
-                <Route component={AllCurrencies} path="/all" />
-                <Route component={TrackedCurrencies} path="/tracked" />
+                <Route component={AllCoins} path="/all" />
+                <Route component={TrackedCoins} path="/tracked" />
             </Switch>
 
         </React.Fragment>

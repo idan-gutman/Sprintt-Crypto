@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export const axiosService = {
-    axiosCoins
+    axiosCoins,
+    coinsSummary
 }
 
 async function axiosCoins() {
@@ -16,5 +17,17 @@ async function axiosCoins() {
     catch (err) {
         console.log(err);
     }
+}
 
+async function coinsSummary() {
+    const mockData = [{
+        "change_24h": "+5.7%",
+        "coin_id": 14,
+        "image_url": "http://api.sprintt.co/crypto/currencies/icon_images/bitcoin.jpg",
+        "name": "Bitcoin",
+        "price": 56847.24,
+        "symbol": "BTC",
+        "volume_24h_mil": 175999.6
+    }]
+    return Promise.resolve(mockData);
 }

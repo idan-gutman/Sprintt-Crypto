@@ -1,0 +1,36 @@
+.percentage-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .arrow-img-big {
+        width: 27px;
+        margin-right: 6px;
+    }
+    .arrow-img-small{
+        width: 12px;
+        margin-right: 2px;
+
+    }
+    
+    .percentage {
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0em;
+        text-align: left;
+        
+        &.percentage-small{
+            font-size: 10px;
+        }
+      
+        &.green {
+            color: #59BB6E;
+        }
+  
+        &.red {
+            color: #DB4848;
+        }
+    }
+  }
