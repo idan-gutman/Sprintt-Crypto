@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { CoinsList } from '../cmps/CoinsList'
-import { coinsService } from '../services/coinsService';
+import { useFetch } from '../services/customHooks';
+
 export const TrackedCoins = () => {
+    const url = `https://api.sprintt.co/crypto/currencies/list?tracked_only=true`;
+    const { data } = useFetch(url);
     const [coins, setCoins] = useState(null);
+
     useEffect(() => {
-        const getCoins = async () => {
-            await coinsService.loadCoinsSummery()
-                .then(coins => {
-                    console.log(coins)
-                    setCoins(coins)
-                })
-        }
-        getCoins()
-    }, [])
+        setCoins(data)
+    }, [data])
 
     return (
         <div className="">
-           {coins && <CoinsList coins={coins} />}
+           <CoinsList coins={coins} />
         </div>
     )
 }

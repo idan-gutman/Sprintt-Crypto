@@ -3,9 +3,11 @@
     align-items: center;
     justify-content: space-between;
     height: 84px;
-    // width: 360px;
+    min-width: 250px;
     border-radius: 20px;
     background-color: #2B2F39;
+    margin-bottom: 16px;
+
 
     .left-content {
         display: flex;
@@ -23,11 +25,18 @@
             margin-right: 10px;
         }
 
+        .name-symbol {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start
+        }
     }
 
     .right-content {
         margin-right: 17px;
-
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end
     }
 
     .name,
@@ -37,7 +46,6 @@
         font-style: normal;
         font-weight: 400;
         letter-spacing: 0em;
-        text-align: left;
         color: #D6D5DA;
         margin-bottom: 2px;
     }

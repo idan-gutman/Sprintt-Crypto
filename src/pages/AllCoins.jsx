@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { CoinsList } from '../cmps/CoinsList'
-import { coinsService } from '../services/coinsService';
+import { useFetch } from '../services/customHooks';
+
 export const AllCoins = () => {
-
+    const url = `https://api.sprintt.co/crypto/currencies/list`;
+    const { data } = useFetch(url);
     const [coins, setCoins] = useState(null);
+    
     useEffect(() => {
-        const getCoins = async () => {
-            await coinsService.loadCoinsSummery()
-                .then(coins => {
-                    console.log(coins)
-                    setCoins(coins)
-                })
-        }
-        getCoins()
-    }, [])
-
+        setCoins(data)
+    }, [data])
+    
+    if(!coins) return <h1>loading...</h1>
     return (
         <div className="">
-           {coins && <CoinsList coins={coins} />}
+            <CoinsList coins={coins} />
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 
 export const MarketChange = ({value,id}) => {
-    console.log(id);
     const marketChange = () => {
         if (!value) return;
         return parseFloat(value) > 0;

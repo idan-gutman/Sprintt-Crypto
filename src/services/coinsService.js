@@ -2,7 +2,8 @@ import {axiosService} from "./axiosService";
 
 export const coinsService= {
     query,
-    loadCoinsSummery
+    trackedCoins,
+    loadAllCoins
 }
 
 async function query(){
@@ -10,8 +11,13 @@ async function query(){
     return Promise.resolve(gCoins);
 }
 
-async function loadCoinsSummery(){
-    const gCoinsSummery = await axiosService.coinsSummary();
+async function trackedCoins(){
+    const gCoinsSummery = await axiosService.trackedCurrencies();
+    return Promise.resolve(gCoinsSummery);
+}
+
+async function loadAllCoins(){
+    const gCoinsSummery = await axiosService.allCoins();
     return Promise.resolve(gCoinsSummery);
 }
 
