@@ -28,33 +28,6 @@
         text-align: left;
     }
 
-    .percentage-container {
-        display: flex;
-        align-items: center;
-
-        .arrow-img {
-            width: 27px;
-            margin-right: 6px;
-        }
-
-        .percentage {
-            font-family: Roboto;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 28px;
-            letter-spacing: 0em;
-            text-align: left;
-
-            &.green {
-                color: #59BB6E;
-            }
-
-            &.red {
-                color: #DB4848;
-            }
-        }
-    }
 
     .navlink-container {
         >* {

@@ -1,19 +1,26 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-export const useForm = (initialState, cb = () => { }) => {
-  const [fields, setFields] = useState(initialState)
+export const useFetch = (url) => {
+  const [status, setStatus] = useState('idle');
+  const [data, setData] = useState([]);
+
+  const token = '3b9dcd58-ea1e-415d-af30-c29f95f1ec4f';
+  const options = {
+      headers: { 'user-access-token': token }
+  };
 
   useEffect(() => {
-    cb(fields)
-  }, [fields])
+      if (!url) return;
+      const fetchData = async () => {
+          setStatus('fetching');
+          const response = await fetch(url,options);
+          const data = await response.json();
+          setData(data);
+          setStatus('fetched');
+      };
 
-  return [
-    fields,
-    function (ev) {
-      const field = ev.target.name
-      const value = (ev.target.type === 'number') ? +ev.target.value : ev.target.value
-      setFields(prevFields => ({ ...prevFields, [field]: value }))
-    },
-    setFields
-  ]
-}
+      fetchData();
+  }, [url]);
+
+  return { status, data };
+};
