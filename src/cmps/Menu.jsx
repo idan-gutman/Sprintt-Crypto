@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Logo from "../assets/imgs/logo.png";
-import { coinsService } from "../services/coinsService"
 import { NavLink } from 'react-router-dom';
 import { MarketChange } from './MarketChange';
 import { useFetch } from '../services/customHooks';
-
-
 
 export const Menu = () => {
 
@@ -26,8 +23,8 @@ export const Menu = () => {
             <MarketChange value={coins} />
 
             <nav className="navlink-container">
-                <NavLink to="/all">All Currencies</NavLink>
-                <NavLink to="/tracked">Tracked Currencies</NavLink>
+                <NavLink to="/home/all">All Currencies</NavLink>
+                <NavLink to="/home/tracked">Tracked Currencies</NavLink>
             </nav>
         </section>
     )
