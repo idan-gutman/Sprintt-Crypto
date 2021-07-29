@@ -1,0 +1,33 @@
+
+.btns-graph {
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+
+    button {
+        background: #2B2F39;
+        border: none;
+        border-radius: 40px;
+        font-family: Roboto;
+        font-size: 16px;
+        color: #D6D5DA;
+        width: 96px;
+        height: 37px;
+
+        &:nth-child(2) {
+            margin: 0px 25px;
+        }
+
+        &.active {
+            border: 1px solid #D6D5DA;
+
+        }
+    }
+}
+
+.canvas-container {
+    width: 90vw;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 42px;
+}

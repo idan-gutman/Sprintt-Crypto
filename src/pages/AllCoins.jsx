@@ -12,6 +12,7 @@ export const AllCoins = () => {
     useEffect(() => {
         // setTimeout(() => {
             setCoins(data)
+            console.log(data);
         //   }, 1000);
     }, [data])
     

@@ -1,0 +1,89 @@
+.coins-details {
+    height: 100%;
+    margin-top: 63px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .arrow-back {
+        width: 8px;
+        height: 15px;
+        position: absolute;
+        left: 32px;
+        top: 64px;
+        cursor: pointer;
+    }
+
+    .details-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 66px;
+
+        .logo {
+            width: 135px;
+            height: 19px;
+            margin-bottom: 42px;
+        }
+
+        .name-details-content {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 37px;
+
+            .name-details {
+                font-family: Roboto;
+                font-size: 28px;
+                font-style: normal;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #D6D5DA;
+                margin-right: 12px;
+
+            }
+
+            .symbol-details {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 21px;
+                color: #8987A0;
+            }
+        }
+
+        .price-details-content {
+            display: flex;
+
+            .price-details {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 34px;
+                line-height: 40px;
+                color: #D6D5DA;
+                margin-right: 32px;
+
+            }
+        }
+    }
+
+
+
+    .btn-details {
+        width: 327px;
+        background-color: #686CD6;
+        border-radius: 50px;
+        border: none;
+        padding: 14px 24px;
+        color: #FCFCFC;
+        font-family: Roboto;
+        font-size: 16px;
+        margin-bottom: 30px;
+
+        &.btn-is-tracked {
+            background-color: #1D1C28;
+            border: 2px solid #686CD6;
+        }
+    }
+}
