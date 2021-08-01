@@ -5,40 +5,35 @@ import { MarketChange } from '../cmps/MarketChange';
 import loader from '../assets/svg/loader2.svg'
 import { axiosService } from '../services/axiosService';
 import { HistoryGraph } from '../cmps/HistoryGraph';
+import { coinsService } from '../services/coinsService';
 
 
 export const CoinsDetails = ({ location, history }) => {
-
+    
     const [coin, setCoin] = useState(null);
-
-
-
-
+    const [localIsTracked, setLocalIsTracked] = useState(null);
+    
     useEffect(() => {
         const { state } = location
         setCoin(state)
+        const _isTracked = state?.is_tracked ? true : false;
+        setLocalIsTracked(_isTracked)
     }, []);
-
-    useEffect(() => {
-
-        const setAxios = async () => {
-            const trackedCoins = await axiosService.axiosIsTracked(false, 84);
-            console.log(trackedCoins);
-        }
-        setAxios()
-    }, []);
-
-
-
-    const isTracked = () => {
-        return is_tracked ? "Remove from tracked currencies list" : "Add to tracked currencies list";
+    
+    const setIsTracked = async () => {
+        setLocalIsTracked(!localIsTracked)
+        const trackedCoins = await axiosService.axiosIsTracked(!localIsTracked, currency_id);
+        console.log(trackedCoins);
     }
-
-
-
+    
+    const isTracked = () => {
+        return localIsTracked ? "Remove from tracked currencies list" : "Add to tracked currencies list";
+    }
+    
     if (!coin) return <img className="loader" src={loader} alt="loading" />
-
+    
     const { name, symbol, price, change_24h, is_tracked, currency_id } = coin;
+    
 
     return (
         <section className="coins-details">
@@ -50,13 +45,13 @@ export const CoinsDetails = ({ location, history }) => {
                     <p className="symbol-details">{symbol}</p>
                 </div>
                 <div className="price-details-content">
-                    <p className="price-details">${price}</p>
+                    <p className="price-details">${coinsService.priceFormat(price)}</p>
                     <MarketChange value={change_24h} />
                 </div>
             </div>
             <HistoryGraph id={currency_id} />
 
-            <button onClick={() => {}} className={`btn-details ${is_tracked ? "btn-is-tracked" : ''}`}>{isTracked()}</button>
+            <button onClick={setIsTracked} className={`btn-details ${localIsTracked ? "btn-is-tracked" : ''}`}>{isTracked()}</button>
         </section>
     )
 }

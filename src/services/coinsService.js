@@ -5,7 +5,8 @@ export const coinsService = {
     // trackedCoins,
     // loadAllCoins
     // getById
-    loadGraphData
+    loadGraphData,
+    priceFormat
 }
 
 // const gCars = _loadCoins()
@@ -30,6 +31,12 @@ export const coinsService = {
 //     const gCoinsSummery = await axiosService.trackedCurrencies();
 //     return Promise.resolve(gCoinsSummery);
 // }
+
+function priceFormat(num){
+    if (parseInt(num) >= 1000) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    } else return num
+}
 
 async function loadGraphData(idx, id) {
 
