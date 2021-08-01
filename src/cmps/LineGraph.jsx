@@ -5,6 +5,7 @@ import 'chartjs-adapter-date-fns';
 
 
 export const LineGraph = ({ price, date }) => {
+
     const data = {
         labels: date,
         datasets: [

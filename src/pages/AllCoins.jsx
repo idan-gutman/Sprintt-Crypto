@@ -10,12 +10,9 @@ export const AllCoins = () => {
     const [coins, setCoins] = useState(null);
     
     useEffect(() => {
-        // setTimeout(() => {
             setCoins(data)
-            console.log(data);
-        //   }, 1000);
     }, [data])
-    
+
     if (!coins) return <img className="loader" src={loader} alt="loading" />
     return (
         <div className="">
