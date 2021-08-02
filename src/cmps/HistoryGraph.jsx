@@ -21,6 +21,7 @@ export const HistoryGraph = ({ id }) => {
             setData({ price: _price, date: _date })
         }
         getDayData()
+        // eslint-disable-next-line
     }, []);
 
     const getTime = async (idx) => {
