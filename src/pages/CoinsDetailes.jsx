@@ -18,6 +18,7 @@ export const CoinsDetails = ({ location, history }) => {
         setCoin(state)
         const _isTracked = state?.is_tracked ? true : false;
         setLocalIsTracked(_isTracked)
+        // eslint-disable-next-line
     }, []);
     
     const setIsTracked = async () => {

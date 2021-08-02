@@ -9,25 +9,24 @@ export const HomePage = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const breakpoint = 768;
 
-    // useEffect(() => {
-    //     const handleResize = () => {
-    //         setScreenWidth(window.innerWidth);
-    //     }
-    //     window.addEventListener('resize', handleResize);
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        }
+        window.addEventListener('resize', handleResize);
 
-    //     return () => {
-    //         window.removeEventListener("resize", handleResize);
-    //     }
-    // }, [screenWidth])
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        }
+    }, [screenWidth])
 
     return (
         <React.Fragment>
-            {/* {screenWidth > breakpoint ? <DesktopScreen />: <Menu />} */}
-           <Menu />
-            <Switch>
+            {screenWidth > breakpoint ? <DesktopScreen />: <Menu />}
+            {screenWidth < breakpoint && <Switch>
                 <Route component={AllCoins} path="/home/all" />
                 <Route component={TrackedCoins} path="/home/tracked" />
-            </Switch>
+            </Switch>}
         </React.Fragment>
     )
 }

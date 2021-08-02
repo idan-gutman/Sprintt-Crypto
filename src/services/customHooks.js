@@ -20,6 +20,7 @@ export const useFetch = (url) => {
       };
 
       fetchData();
+      // eslint-disable-next-line
   }, [url]);
 
   return { status, data };
